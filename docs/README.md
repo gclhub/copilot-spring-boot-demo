@@ -19,10 +19,10 @@ This directory contains all documentation for the E-Commerce Monolith to Microse
 - **[Project Summary](PROJECT_SUMMARY.md)** - Technical overview and component details
 - **[API Examples](API_EXAMPLES.md)** - Comprehensive API testing guide with curl examples
 
-### Reference Implementation (completed-demo branch)
+### Reference Implementation
 - **[Microservices README](MICROSERVICES_README.md)** - Complete microservices architecture guide
-- **[Completed Demo Guide](COMPLETED_DEMO_GUIDE.md)** - Guide to the completed implementation
-- **[Delivery Summary](DELIVERY_SUMMARY.md)** - Complete project delivery overview
+- **[Completed Demo Guide](COMPLETED_DEMO_GUIDE.md)** - Guide to the completed microservices implementation
+- **[Delivery Summary](DELIVERY_SUMMARY.md)** - Complete project delivery overview and statistics
 
 ## Documentation Overview
 
@@ -40,6 +40,7 @@ This directory contains all documentation for the E-Commerce Monolith to Microse
 1. Understand the architecture in [ARCHITECTURE.md](ARCHITECTURE.md)
 2. Review [PROJECT_SUMMARY.md](PROJECT_SUMMARY.md) for technical details
 3. Use [COPILOT_PROMPTS.md](COPILOT_PROMPTS.md) to guide your refactoring
+4. Check [COMPLETED_DEMO_GUIDE.md](COMPLETED_DEMO_GUIDE.md) for the reference implementation
 
 ## Document Descriptions
 
@@ -54,7 +55,7 @@ This directory contains all documentation for the E-Commerce Monolith to Microse
 | **DIAGRAMS.md** | Visual diagrams and communication flows | Everyone |
 | **PROJECT_SUMMARY.md** | Technical component overview | Developers |
 | **API_EXAMPLES.md** | REST API testing examples | Developers, Testers |
-| **MICROSERVICES_README.md** | Microservices architecture guide | Everyone (completed-demo) |
+| **MICROSERVICES_README.md** | Microservices architecture guide | Everyone |
 | **COMPLETED_DEMO_GUIDE.md** | Reference implementation guide | Everyone |
 | **DELIVERY_SUMMARY.md** | Complete project delivery overview | Presenters, Managers |
 

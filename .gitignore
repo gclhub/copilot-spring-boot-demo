@@ -60,11 +60,6 @@ logs/
 # Spring Boot
 spring.log
 
-# Microservices directories (only on completed-demo branch)
-customer-service/
-inventory-service/
-order-service/
-build-all-services.sh
-start-all-services.sh
-stop-all-services.sh
+# Microservices runtime files
 .service-pids
+logs/

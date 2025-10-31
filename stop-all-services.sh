@@ -7,8 +7,9 @@ echo "========================================"
 
 if [ ! -f .service-pids ]; then
     echo "⚠️  No PID file found. Services may not be running."
-    echo "Attempting to kill all Java processes running Spring Boot..."
-    pkill -f "spring-boot:run"
+    echo "Attempting to find and kill Spring Boot processes for this project..."
+    # More specific pattern to avoid killing unrelated processes
+    pkill -f "copilot-spring-boot-demo.*spring-boot:run"
     exit 0
 fi
 

@@ -11,6 +11,9 @@ if [ -f .service-pids ]; then
     exit 1
 fi
 
+# Create logs directory if it doesn't exist
+mkdir -p logs
+
 # Array to store PIDs
 declare -a PIDS
 
@@ -24,9 +27,15 @@ PIDS+=($CUSTOMER_PID)
 echo "Customer Service started with PID: $CUSTOMER_PID"
 cd ..
 
-# Wait for Customer Service to be ready
+# Wait for Customer Service to be ready with health check
 echo "Waiting for Customer Service to start..."
-sleep 15
+for i in {1..30}; do
+    if curl -s http://localhost:8081/api/customers > /dev/null 2>&1; then
+        echo "Customer Service is ready!"
+        break
+    fi
+    sleep 1
+done
 
 # Start Inventory Service (Port 8082)
 echo ""
@@ -38,9 +47,15 @@ PIDS+=($INVENTORY_PID)
 echo "Inventory Service started with PID: $INVENTORY_PID"
 cd ..
 
-# Wait for Inventory Service to be ready
+# Wait for Inventory Service to be ready with health check
 echo "Waiting for Inventory Service to start..."
-sleep 15
+for i in {1..30}; do
+    if curl -s http://localhost:8082/api/products > /dev/null 2>&1; then
+        echo "Inventory Service is ready!"
+        break
+    fi
+    sleep 1
+done
 
 # Start Order Service (Port 8083)
 echo ""
@@ -52,9 +67,15 @@ PIDS+=($ORDER_PID)
 echo "Order Service started with PID: $ORDER_PID"
 cd ..
 
-# Wait for Order Service to be ready
+# Wait for Order Service to be ready with health check
 echo "Waiting for Order Service to start..."
-sleep 15
+for i in {1..30}; do
+    if curl -s http://localhost:8083/api/orders > /dev/null 2>&1; then
+        echo "Order Service is ready!"
+        break
+    fi
+    sleep 1
+done
 
 # Save PIDs to file
 echo "${PIDS[@]}" > .service-pids
@@ -74,3 +95,4 @@ echo "  tail -f logs/order-service.log"
 echo ""
 echo "To stop all services, run:"
 echo "  ./stop-all-services.sh"
+

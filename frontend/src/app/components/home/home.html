@@ -1,0 +1,35 @@
+<div class="home-container">
+  <mat-card class="welcome-card">
+    <mat-card-header>
+      <mat-card-title>E-Commerce Microservices Demo</mat-card-title>
+      <mat-card-subtitle>Angular Frontend with UI Testing Scaffolding</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        This Angular application demonstrates a minimal GUI for interacting with three Spring Boot microservices:
+      </p>
+      <ul>
+        <li><strong>Customer Service</strong> - Port 8081</li>
+        <li><strong>Inventory Service</strong> - Port 8082</li>
+        <li><strong>Order Service</strong> - Port 8083</li>
+      </ul>
+      <p>
+        The application includes scaffolding for the following testing frameworks:
+      </p>
+      <ul>
+        <li><strong>Jest</strong> - Unit testing</li>
+        <li><strong>TestCafe</strong> - End-to-end testing</li>
+        <li><strong>Cucumber</strong> - BDD testing</li>
+        <li><strong>Selenium</strong> - End-to-end testing</li>
+      </ul>
+      <p>
+        <strong>Note:</strong> Make sure all three microservices are running before navigating to the data views.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" routerLink="/customers">View Customers</button>
+      <button mat-raised-button color="primary" routerLink="/products">View Products</button>
+      <button mat-raised-button color="primary" routerLink="/orders">View Orders</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

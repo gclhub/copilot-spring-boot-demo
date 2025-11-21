@@ -1,0 +1,17 @@
+{
+  "browsers": ["chrome:headless"],
+  "src": ["e2e/testcafe/**/*.testcafe.ts"],
+  "reporter": [
+    {
+      "name": "spec"
+    },
+    {
+      "name": "json",
+      "output": "testcafe-reports/report.json"
+    }
+  ],
+  "screenshots": {
+    "path": "testcafe-reports/screenshots",
+    "takeOnFails": true
+  }
+}

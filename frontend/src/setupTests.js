@@ -3,3 +3,14 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
+
+// Mock window.alert
+global.alert = jest.fn();
+
+// Mock window.confirm
+global.confirm = jest.fn(() => true);
+
+// Reset mocks after each test
+afterEach(() => {
+  jest.clearAllMocks();
+});

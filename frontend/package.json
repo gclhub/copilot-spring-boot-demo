@@ -4,9 +4,6 @@
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
     "axios": "^1.13.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -17,6 +14,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:watch": "react-scripts test --watch",
+    "test:coverage": "react-scripts test --coverage --watchAll=false",
+    "test:ci": "CI=true react-scripts test --coverage",
     "test:cucumber": "cucumber-js",
     "test:selenium": "node tests/selenium/run-tests.js",
     "eject": "react-scripts eject"
@@ -39,8 +39,31 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!axios/)"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js",
+      "!src/reportWebVitals.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 70,
+        "branches": 60,
+        "functions": 70,
+        "lines": 70
+      }
+    }
+  },
   "devDependencies": {
     "@cucumber/cucumber": "^12.2.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "axios-mock-adapter": "^2.1.0",
+    "jest-environment-jsdom": "^30.2.0",
     "selenium-webdriver": "^4.38.0"
   }
 }

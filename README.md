@@ -60,6 +60,7 @@ copilot-spring-boot-demo/
 
 - **Java 17** or higher
 - **Maven 3.6+**
+- **Node.js 14+** and **npm** (for frontend)
 - **GitHub Copilot** enabled in your IDE (VS Code, IntelliJ, etc.)
 - **Git** for version control
 
@@ -151,6 +152,53 @@ curl -X POST http://localhost:8080/api/orders \
     "shippingCountry": "USA"
   }'
 ```
+
+## GUI Frontend
+
+A React-based web frontend is available in the `frontend/` directory, providing a user interface for interacting with the microservices.
+
+### Features
+- **Tabbed Interface**: Easy navigation between Customers, Products, and Orders
+- **Data Display**: View lists of customers, products, and orders
+- **Testing Support**: Configured for Jest, Cucumber, and Selenium testing
+
+### Quick Start
+
+```bash
+# Navigate to frontend directory
+cd frontend
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
+```
+
+The frontend will open at `http://localhost:3000`
+
+**Note:** Ensure all three microservices are running before starting the frontend.
+
+### Testing Frameworks
+
+The frontend supports three testing frameworks:
+
+1. **Jest** (Unit Testing) - Built-in with Create React App
+   ```bash
+   npm test
+   ```
+
+2. **Cucumber** (BDD Testing) - For behavior-driven development
+   ```bash
+   npm run test:cucumber
+   ```
+
+3. **Selenium** (Browser Automation) - For end-to-end testing
+   ```bash
+   npm run test:selenium
+   ```
+
+See [frontend/README.md](frontend/README.md) for detailed instructions.
 
 ## Key Architectural Patterns to Observe
 

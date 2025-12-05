@@ -104,3 +104,8 @@ Then('the application should remain responsive', async function () {
   // Example step - verify application is still functional
   console.log('Verify navigation and UI are still responsive');
 });
+
+When('I navigate to the orders page', async function () {
+  // Example step - implement navigation to orders page
+  console.log('Navigate to orders page');
+});

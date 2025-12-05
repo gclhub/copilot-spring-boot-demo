@@ -1,0 +1,26 @@
+{
+  "extends": "@istanbuljs/nyc-config-typescript",
+  "all": true,
+  "check-coverage": false,
+  "reporter": ["html", "text", "lcov", "json-summary"],
+  "report-dir": "cucumber-coverage",
+  "include": [
+    "src/app/**/*.ts"
+  ],
+  "exclude": [
+    "src/app/**/*.spec.ts",
+    "src/app/**/*.interface.ts",
+    "src/main.ts",
+    "**/*.d.ts"
+  ],
+  "extension": [
+    ".ts"
+  ],
+  "require": [
+    "ts-node/register",
+    "source-map-support/register"
+  ],
+  "source-map": true,
+  "instrument": true,
+  "produce-source-map": true
+}

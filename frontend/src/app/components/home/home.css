@@ -1,0 +1,27 @@
+.home-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.welcome-card {
+  max-width: 800px;
+  margin: 20px;
+}
+
+mat-card-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 16px;
+}
+
+ul {
+  margin: 16px 0;
+}
+
+li {
+  margin: 8px 0;
+}

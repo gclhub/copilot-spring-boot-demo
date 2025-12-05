@@ -67,3 +67,14 @@ build-all-services.sh
 start-all-services.sh
 stop-all-services.sh
 .service-pids
+
+# Angular Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/coverage/
+frontend/cucumber-coverage/
+frontend/testcafe-reports/
+frontend/cucumber-reports/
+frontend/.testcaferc.json.bak
+frontend/.nyc_output/

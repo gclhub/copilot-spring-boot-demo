@@ -1,15 +1,71 @@
 # E-Commerce Monolith to Microservices Demo
 
-This repository contains a demonstration project for refactoring a monolithic Spring Boot application into domain-specific microservices using GitHub Copilot.
+This repository demonstrates the refactoring of a monolithic Spring Boot application into domain-specific microservices.
 
-## Overview
+## 🎯 Project Status
 
-This project starts as a **monolithic e-commerce application** with three tightly coupled business domains:
+This project now contains **both implementations**:
+
+1. **Monolithic Application** - Original tightly-coupled application (in `src/`)
+2. **Microservices Architecture** - Refactored into three independent services
+
+## 📦 Microservices Implementation
+
+The application has been successfully refactored into three independent microservices:
+
+- **Customer Service** (Port 8081) - Customer management
+- **Inventory Service** (Port 8082) - Product inventory management  
+- **Order Service** (Port 8083) - Order processing with REST API coordination
+
+### Quick Start with Microservices
+
+See [MICROSERVICES_README.md](MICROSERVICES_README.md) for complete documentation.
+
+#### Build All Services
+```bash
+./build-all-services.sh
+```
+
+#### Run Services Individually
+```bash
+# 1. Start Customer Service
+cd customer-service && mvn spring-boot:run
+
+# 2. Start Inventory Service (in new terminal)
+cd inventory-service && mvn spring-boot:run
+
+# 3. Start Order Service (in new terminal)
+cd order-service && mvn spring-boot:run
+```
+
+#### Test the Microservices
+```bash
+# Get customers
+curl http://localhost:8081/api/customers
+
+# Get products
+curl http://localhost:8082/api/products
+
+# Create an order (coordinates with both services)
+curl -X POST http://localhost:8083/api/orders \
+  -H "Content-Type: application/json" \
+  -d '{
+    "customerId": 1,
+    "items": [{"productId": 1, "quantity": 2}],
+    "shippingAddress": "123 Main St",
+    "shippingCity": "New York",
+    "shippingState": "NY",
+    "shippingZip": "10001",
+    "shippingCountry": "USA"
+  }'
+```
+
+## 🏗️ Monolithic Application (Original)
+
+This project started as a **monolithic e-commerce application** with three tightly coupled business domains:
 - **Customer Management** - Customer data and operations
 - **Inventory Management** - Product catalog and stock management
 - **Order Management** - Order processing and fulfillment
-
-The goal is to demonstrate how to use GitHub Copilot to split this monolith into three separate microservices, each owning its domain and communicating via REST APIs.
 
 ## Project Structure
 
